@@ -33,7 +33,7 @@
 				<tr ng-repeat="data in data | orderBy:'_id':true" class="row">
 					<td class="col-lg-2"><center>{{data.name}}</center></td>
 					<td class="col-lg-8"></td>
-					<td class="col-lg-2"><a href="{{data.link}}" class="btn btn-info but" ng-show="data.type==0">Join</a><a href="{{data.link}}" class="btn btn-warning but" ng-show="data.type==1">Open</a>&nbsp&nbsp&nbsp&nbsp<span style="color:red; cursor:pointer;" class="glyphicon glyphicon-trash" ng-click="removeData(data._id)"></td>
+					<td class="col-lg-2"><a href="{{data.link}}" class="btn btn-info but" ng-show="data.type==0">Join</a><a target="_blank" href="{{data.link}}" class="btn btn-warning but" ng-show="data.type==1">Open</a>&nbsp&nbsp&nbsp&nbsp<span style="color:red; cursor:pointer;" class="glyphicon glyphicon-trash" ng-click="removeData(data._id)"></td>
 				</tr>
 			</tbody>
 		</table>
