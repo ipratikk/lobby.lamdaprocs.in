@@ -19,6 +19,13 @@ myApp.controller('dataCtrl',['$scope', '$http', function($scope, $http){
 
 	$scope.addData = function(){
 		console.log($scope.inData);
+
+		if($scope.inData.link.indexOf("steam://") !== -1){
+			$scope.inData.type = 0;		
+		}else{
+			$scope.inData.type=1;
+		}
+
 		$http.post('/addData',$scope.inData).success(function(response){
 			console.log(response);
 			refresh();
