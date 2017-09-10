@@ -1,4 +1,10 @@
-var myApp = angular.module('myApp',[]);
+var myApp = angular.module('myApp',[]).config( ['$compileProvider',
+    function( $compileProvider )
+    {   
+        $compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|ftp|mailto|chrome-extension|steam|bitcoin):/);
+        // Angular before v1.2 uses $compileProvider.urlSanitizationWhitelist(...)
+    }
+]);
 myApp.controller('dataCtrl',['$scope', '$http', function($scope, $http){
 	console.log('I am incharge bitch!');
 	var refresh = function(){
