@@ -1,0 +1,37 @@
+<!DOCTYPE>
+<html ng-app="myApp">
+	<head>
+		<title>Noobad Elites</title>
+		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<link rel="shortcut icon" href="Steam.png" type="image/x-icon">
+	</head>
+	<body class="container">
+		<h1>Noobad Elites</h1>
+		<div ng-controller="dataCtrl">
+		<table class="table">
+			<thead>
+				<tr class="row">
+					<th class="col-lg-2">Name</th>
+					<th class="col-lg-8">Link</th>
+					<th class="col-lg-2">Action</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class="row">
+					<td class="col-lg-2"><input class="form-control" placeholder="Enter Name" ng-model="inData.name" ></td>
+					<td class="col-lg-8"><input class="form-control" placeholder="Enter Link" ng-model="inData.link" ></td>
+					<td class="col-lg-2"><button class="btn btn-success" ng-click="addData()">Submit</button></td>
+				</tr>
+				<tr ng-repeat="data in data | orderBy:'_id':true" class="row">
+					<td class="col-lg-2"><center>{{data.name}}</center></td>
+					<td class="col-lg-8"></td>
+					<td class="col-lg-2"><a href="{{data.link}}" class="btn btn-info">Join</a>&nbsp<span style="color:red; cursor:pointer;" class="glyphicon glyphicon-trash" ng-click="removeData(data._id)"></td>
+				</tr>
+			</tbody>
+		</table>
+		</div>
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.26/angular.min.js"></script>
+		<script type="text/javascript" src="app.js"></script>
+	</body>
+
+</html>
