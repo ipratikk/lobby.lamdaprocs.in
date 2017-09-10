@@ -19,8 +19,8 @@ myApp.controller('dataCtrl',['$scope', '$http', function($scope, $http){
 
 	$scope.addData = function(){
 		console.log($scope.inData);
-
-		if($scope.inData.link.indexOf("steam://") !== -1){
+		if($scope.inData.name.indexOf("steam://") !== -1){} //when empty name is passed, it creates error and thus terminates the process
+                if($scope.inData.link.indexOf("steam://") !== -1){  //when empty link is passed, it creates arror and thus terminates the process
 			$scope.inData.type = 0;		
 		}else{
 			$scope.inData.type=1;
