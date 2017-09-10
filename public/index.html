@@ -4,6 +4,11 @@
 		<title>Noobad Elites</title>
 		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 		<link rel="shortcut icon" href="Steam.png" type="image/x-icon">
+		<style>
+			.but{
+				width:76px;
+			}
+		</style>
 	</head>
 	<body class="container">
 		<h1>Noobad Elites</h1>
@@ -20,12 +25,12 @@
 				<tr class="row">
 					<td class="col-lg-2"><input class="form-control" placeholder="Enter Name" ng-model="inData.name" ></td>
 					<td class="col-lg-8"><input class="form-control" placeholder="Enter Link" ng-model="inData.link" ></td>
-					<td class="col-lg-2"><button class="btn btn-success" ng-click="addData()">Submit</button></td>
+					<td class="col-lg-2"><button class="btn btn-success but" ng-click="addData()">Submit</button></td>
 				</tr>
 				<tr ng-repeat="data in data | orderBy:'_id':true" class="row">
 					<td class="col-lg-2"><center>{{data.name}}</center></td>
 					<td class="col-lg-8"></td>
-					<td class="col-lg-2"><a  target="_blank" href="{{data.link}}" class="btn btn-info">Join</a>&nbsp<span style="color:red; cursor:pointer;" class="glyphicon glyphicon-trash" ng-click="removeData(data._id)"></td>
+					<td class="col-lg-2"><a href="{{data.link}}" class="btn btn-info but" ng-show="data.type==0">Join</a><a href="{{data.link}}" class="btn btn-warning but" ng-show="data.type==1">Open</a>&nbsp&nbsp&nbsp&nbsp<span style="color:red; cursor:pointer;" class="glyphicon glyphicon-trash" ng-click="removeData(data._id)"></td>
 				</tr>
 			</tbody>
 		</table>
