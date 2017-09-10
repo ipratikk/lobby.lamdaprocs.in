@@ -1,0 +1,6 @@
+v 2.0.0
+  -redisgned UI with fast and more responsive framework.
+v 2.0.1
+  -minor bugfix which was not allowing to join lobbys.
+v 2.0.2
+  -smart action buttons now can show join or open as per the URL submitted.
