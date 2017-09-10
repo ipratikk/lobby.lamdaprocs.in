@@ -4,3 +4,6 @@ v 2.0.1
   -minor bugfix which was not allowing to join lobbys.
 v 2.0.2
   -smart action buttons now can show join or open as per the URL submitted.
+v 2.0.3
+  -Empty fields are no more accepted.
+  -Warning messages added to help users understand the required fields.
