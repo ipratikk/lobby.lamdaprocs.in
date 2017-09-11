@@ -10,3 +10,5 @@ v 2.0.3
 v 2.0.4
   -rearranged UI elements
   -added a date and time tags to avoid confusion regarding the latest dropped link
+v 2.0.5
+  -timezone has been added
