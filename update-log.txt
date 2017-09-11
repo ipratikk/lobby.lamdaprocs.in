@@ -7,8 +7,8 @@ v 2.0.2
 v 2.0.3
   -Empty fields are no more accepted.
   -Warning messages added to help users understand the required fields.
-v 2.0.4
+v 2.1.0
   -rearranged UI elements
   -added a date and time tags to avoid confusion regarding the latest dropped link
-v 2.0.5
+v 2.1.1
   -timezone has been added
