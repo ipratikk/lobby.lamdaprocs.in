@@ -18,19 +18,21 @@ myApp.controller('dataCtrl',['$scope', '$http', function($scope, $http){
 	refresh();
 
 	$scope.addData = function(){
-		console.log($scope.inData);
-		if($scope.inData.name.indexOf("steam://") !== -1){} //when empty name is passed, it creates error and thus terminates the process
+                var today = new Date();
+                $scope.inData.date = today.getDate()+'-'+(today.getMonth()+1)+'-'+today.getFullYear();
+                $scope.inData.time = today.getHours()+":"+today.getMinutes()+":"+today.getSeconds();
+                console.log($scope.inData);
+                if($scope.inData.name.indexOf("steam://") !== -1){} //when empty name is passed, it creates error and thus terminates the process
                 if($scope.inData.link.indexOf("steam://") !== -1){  //when empty link is passed, it creates arror and thus terminates the process
-			$scope.inData.type = 0;		
-		}else{
-			$scope.inData.type=1;
-		}
-
-		$http.post('/addData',$scope.inData).success(function(response){
-			console.log(response);
-			refresh();
-		});
-	};
+                        $scope.inData.type = 0;
+                }else{
+                        $scope.inData.type=1;
+                }
+                $http.post('/addData',$scope.inData).success(function(response){
+                        console.log(response);
+                        refresh();
+                });
+        };
 
 	$scope.removeData = function(id){
 		console.log(id);
