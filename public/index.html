@@ -8,32 +8,45 @@
 			.but{
 				width:76px;
 			}
+			.time{
+                                font-size: 15px;
+                        }
+
 		</style>
 	</head>
 	<body class="container">
 		<h1>Noobad Elites</h1>
 		 <p>v 2.0.3 - Check out <a style="text-decoration:none;" target="_blank" href="https://github.com/satnam-sandhu/lobby.lamdaprocs.in/blob/master/update-log.txt">what's new.</a></p>
-		<div ng-controller="dataCtrl">
-		<table class="table">
+		<hr>
+                <div ng-controller="dataCtrl">
+                <h3>Submit Lobby Link</h3>
+                <table><form>
+                                <tbody class="row">
+                                        <td class="col-md-2"><input class="form-control" placeholder="Enter Name" ng-model="inData.name" required></td>
+                                        <td class="col-md-8"><input class="form-control" placeholder="Enter Link" ng-model="inData.link" required></td>
+                                        <td class="col-md-2"><button type="submit" class="btn btn-success but" ng-click="addData()">Submit</button></td>
+                                </tbody>
+                </form></table>
+                <hr>
+                <table class="table">
 			<thead>
-				<tr class="row">
-					<th class="col-lg-2">Name</th>
-					<th class="col-lg-8">Link</th>
-					<th class="col-lg-2">Action</th>
-				</tr>
-			</thead>
-			<tbody>
-				<form>
-				<tr class="row">
-					<td class="col-lg-2"><input required class="form-control" placeholder="Enter Name" ng-model="inData.name" ></td>
-					<td class="col-lg-8"><input required class="form-control" placeholder="Enter Link" ng-model="inData.link" ></td>
-					<td class="col-lg-2"><button type="submit" class="btn btn-success but" ng-click="addData()">Submit</button></td>
-				</tr>
-				</form>
-				<tr ng-repeat="data in data | orderBy:'_id':true" class="row">
-					<td class="col-lg-2"><center>{{data.name}}</center></td>
-					<td class="col-lg-8"></td>
-					<td class="col-lg-2"><a href="{{data.link}}" class="btn btn-info but" ng-show="data.type==0">Join</a><a target="_blank" href="{{data.link}}" class="btn btn-warning but" ng-show="data.type==1">Open</a>&nbsp&nbsp&nbsp&nbsp<span style="color:red; cursor:pointer;" class="glyphicon glyphicon-trash" ng-click="removeData(data._id)"></td>
+                                <tr class="row">
+                                        <th class="col-lg-2"></th>
+                                        <th class="col-lg-2">Name</th>
+                                        <th class="col-lg-4"></th>
+                                        <th class="col-lg-2">Action</th>
+                                        <th class="col-lg-2"></th>
+                                </tr>
+                        </thead>
+                        <tbody>
+                                <tr ng-repeat="data in data | orderBy:'_id':true" class="row">
+
+					<td class="col-lg-2"></td>
+                                        <td class="col-lg-2">{{data.name}}</td>
+                                        <td class="col-lg-4"><p class="time"><em>{{data.date}} ~ {{data.time}} IST</em></p></td>
+                                        <td class="col-lg-2"><a href="{{data.link}}" class="btn btn-info but" ng-show="data.type==0">Join</a><a target="_blank" h$
+                                        <td class="col-lg-2"></td>
+
 				</tr>
 			</tbody>
 		</table>
