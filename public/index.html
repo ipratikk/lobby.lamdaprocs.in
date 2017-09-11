@@ -44,7 +44,7 @@
 					<td class="col-lg-2"></td>
                                         <td class="col-lg-2">{{data.name}}</td>
                                         <td class="col-lg-4"><p class="time"><em>{{data.date}} ~ {{data.time}} IST</em></p></td>
-                                        <td class="col-lg-2"><a href="{{data.link}}" class="btn btn-info but" ng-show="data.type==0">Join</a><a target="_blank" h$
+                                        <td class="col-lg-2"><a href="{{data.link}}" class="btn btn-info but" ng-show="data.type==0">Join</a><a target="_blank" href="{{data.link}}" class="btn btn-warning but" ng-show="data.type==1">Open</a>&nbsp&nbsp&nbsp&nbsp<span style="color:red; cursor:pointer;" class="glyphicon glyphicon-trash" ng-click="removeData(data._id)"></td>
                                         <td class="col-lg-2"></td>
 
 				</tr>
